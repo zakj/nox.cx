@@ -10,6 +10,7 @@
   {% assets 'css' -%}
     <link href="{{ ASSET_URL }}" rel="stylesheet">
   {%- endassets %}
+  {% block extra_head %}{% endblock %}
 </head>
 <body>
   {% block content %}{% endblock %}

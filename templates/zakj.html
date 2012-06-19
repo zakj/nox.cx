@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% set title = 'Zak Johnson' %}
 
+{% block extra_head %}
+  <link rel="openid.server openid2.provider" href="https://www.google.com/accounts/o8/ud">
+  <link rel="openid.delegate openid2.local_id" href="https://www.google.com/profiles/zak.johnson">
+{% endblock %}
+
+
 {% block content %}
   <h1>{{ title }}</h1>
 

@@ -1,0 +1,70 @@
+// Based on normalize.css - http://github.com/necolas/normalize.css
+
+// Corrects block display not defined in IE6/7/8/9 & FF3.
+article, aside, details, figcaption, figure, footer,
+header, hgroup, nav, section, summary
+  display: block
+
+// Prevents iOS text size adjust after orientation change, without disabling
+// user zoom.
+html
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+// I'll set my own margins and paddings, thanks.
+*
+  margin: 0
+  padding: 0
+
+// Some accessibility helpers for links.
+a:focus
+  outline: thin dotted
+a:hover, a:active
+  outline: 0
+
+// Standardize some common styles.
+
+b, strong
+  font-weight: bold
+
+dd
+  margin-left: 40px
+
+menu, ol, ul
+  padding-left: 40px
+
+nav
+  ul, ol
+    list-style: none
+
+img
+  border: 0
+  // Improves image quality when scaled in IE7.
+  -ms-interpolation-mode: bicubic;
+
+// Form elements should use standard fonts.
+input, select, textarea, button
+  font: inherit
+  vertical-align: baseline
+
+button, input[type="button"], input[type="reset"], input[type="submit"]
+  cursor: pointer
+  -webkit-appearance: button
+
+button[disabled], input[disabled]
+  cursor: default
+
+input[type="checkbox"], input[type="radio"]
+  // box-sizing is content-box in IE8/9
+  box-sizing: border-box
+
+// Removes inner padding and border in FF3+
+button::-moz-focus-inner, input::-moz-focus-inner
+  border: 0
+  padding: 0
+
+// Removes default vertical scrollbar in IE6-9
+// Improves readability and alignment in all browsers
+textarea
+  overflow: auto
+  vertical-align: top

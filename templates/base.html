@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=640">
+  <title>{{ title }}</title>
+
+  <link href="http://fonts.googleapis.com/css?family=PT+Serif:400,700|PT+Sans" rel="stylesheet">
+  {% assets 'css' -%}
+    <link href="{{ ASSET_URL }}" rel="stylesheet">
+  {%- endassets %}
+</head>
+<body>
+  {% block content %}{% endblock %}
+</body>
+</html>

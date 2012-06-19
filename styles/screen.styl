@@ -1,0 +1,130 @@
+@import "nib"
+
+baseline = 24px
+header-font = PT Serif
+body-font = PT Sans
+
+*
+  box-sizing: border-box
+
+body
+  color: #222
+  font: normal 16px/baseline body-font, sans-serif
+  margin: 0 auto
+  padding-bottom: baseline * 3
+  width: 600px
+
+h1
+  text-align: center
+  font-family: header-font
+  margin: (baseline * 3) 0 baseline
+
+a
+  color: #009
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+.fake-list
+  clearfix()
+  list-style: none
+  margin-top: 0
+  padding-left: 0
+
+section
+  background: url(rule.png) repeat-x left baseline
+  margin-top: baseline
+  text-align: center
+  p, dl
+    text-align: left
+
+// Main header.
+body > h1
+  background-color: #222;
+  color: #fff;
+  font-size: 36px
+  font-weight: normal
+  line-height: baseline * 3
+
+.connect
+  @extend .fake-list
+  background-color: #fff
+  display: block
+  height: baseline * 2
+  margin: 0 auto
+  padding: 6px 15px
+  width: 28px + 16 + 16 + 50
+
+  li
+    float: left
+  a
+    background-repeat: no-repeat
+    overflow: hidden
+    text-indent: 110%
+    white-space: nowrap
+    display: inline-block
+    opacity: 1
+    &:hover
+      opacity: .7
+  .twitter, .github
+    margin-top: 10px
+  .twitter
+    background-image: url(twitter.png)
+    width: image-size('twitter.png')[0]
+    height: image-size('twitter.png')[1]
+  .email
+    background-image: url(email.png)
+    width: image-size('email.png')[0]
+    height: image-size('email.png')[1]
+    margin: 0 10px
+  .github
+    background-image: url(github.png)
+    width: image-size('github.png')[0]
+    height: image-size('github.png')[1]
+
+section h1
+  background: #fff
+  display: inline-block
+  font-size: 12px
+  line-height: baseline
+  margin-top: (baseline / 2)
+  margin-bottom: (baseline / 2)
+  padding: 0 1em
+  text-transform: uppercase
+
+dl
+  clearfix()
+  dt, dd
+    float: left
+  dt
+    clear: left
+  dt:after
+    content: ":"
+  dd
+    margin-left: .5em
+
+.photos
+  @extend .fake-list
+  img-size = 90px
+  li
+    float: left
+    margin-left: 12px
+    &:first-child { margin-left: 0 }
+  a
+    box-shadow: rgba(black, .5) 0 0 8px
+    display: block
+  a:hover
+    box-shadow: rgba(black, 1) 0 0 8px
+  img
+    display: block
+    width: img-size
+    height: img-size
+
+
+show-baseline-background(color=rgba(#eee, .7))
+  background-image: linear-gradient(bottom, color 5%, rgba(color, 0) 5%);
+  background-position: left 1px
+  background-size: 100% baseline
+
+body.baseline-grid
+  show-baseline-background()

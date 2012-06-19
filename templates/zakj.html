@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% set title = 'Zak Johnson' %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+
+  <section>
+    <ul class="connect">
+      <li><a href="https://twitter.com/zakj" class="twitter">@zakj</a></li>
+      <li><a href="mailto:zakj@nox.cx" class="email">zakj@nox.cx</a></li>
+      <li><a href="https://github.com/zakj" class="github">zakj on GitHub</a></li>
+    </ul>
+
+    <p>Hello! I'm a full-stack developer with a background in information
+    security. I've been building things on the web since the nineties,
+    previously for companies like <a href="http://www.etsy.com/">Etsy</a> and
+    <a href="http://www.good.is">GOOD</a>. I'm passionate about Python,
+    CoffeeScript, minimal design, and grammar. Lately, my time is filled
+    crafting web experiences via <a href="http://madebycabin.com/">Cabin</a>.
+    </p>
+  </section>
+
+  <section>
+    <h1>Projects</h1>
+
+    <dl>
+      <dt><a href="http://madebycabin.com/">Cabin</a></dt>
+      <dd>a growing collection of personal and client work</dd>
+      <dt><a href="https://chrome.google.com/webstore/detail/ndjggnnohdkheiijjhbklkanjcpibbng">Linkhunter</a></dt>
+      <dd>
+        a Chrome extension for bookmarks with Pinboard &amp; Delicious
+        (<a href="https://github.com/cabin/linkhunter">source</a>)
+      </dd>
+      <dt><a href="https://github.com/zakj/dotfiles">dotfiles</a></dt>
+      <dd>my personal configuration files&mdash;vim, zsh, git, mutt, etc.</dd>
+      <dt><a href="https://github.com/zakj/redthonic">redthonic</a></dt>
+      <dd>thin Python object wrappers for some <a href="http://redis.io/">Redis</a> data types</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h1>Photos</h1>
+    <ul class="photos">
+    {% for image in images %}
+      <li><a href="{{ image.link }}"><img src="{{ image.thumbnail }}" alt=""></a></li>
+    {% endfor %}
+    </ul>
+  </section>
+{% endblock %}

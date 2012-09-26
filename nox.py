@@ -45,3 +45,7 @@ def zakj():
         p.hgetall('instagram:media:%s' % _id)
     images = p.execute()
     return render_template('zakj.html', images=images)
+
+@app.route('/sleep')
+def sleep():
+    return render_template('sleep.html')

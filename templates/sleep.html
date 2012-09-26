@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Sleep!</title>
+    <style>
+      body {
+        background: #000;
+        color: #999;
+        font-family: Helvetica Neue, Helvetica, sans-serif;
+        font-size: 24px;
+        text-align: center;
+        padding-bottom: 320px;  /* to hide the addressbar */
+      }
+      h1 { font-family: Avenir, sans-serif; }
+      #results {
+        list-style: none;
+        padding: 0;
+      }
+      #results > li {
+        background: #222;
+        border-radius: 3px;
+        display: inline-block;
+        line-height: 1.5;
+        padding: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Wake up at:</h1>
+    <ul id="results">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <script>
+      (function () {
+        var ONE_MINUTE = 1000 * 60,
+            FALL_ASLEEP_TIME = 14 * ONE_MINUTE,
+            SLEEP_CYCLE_TIME = 90 * ONE_MINUTE,
+            results = document.getElementById('results');
+
+        function formatTime(date) {
+          var hours = date.getHours(),
+              minutes = date.getMinutes();
+          return hours + ":" + (minutes < 10 ? "0" + minutes : minutes);
+        }
+
+        function wakeupTimes(bedtime) {
+          bedtime = +bedtime + FALL_ASLEEP_TIME;
+          return [0, 0, 0].map(function(_, i){
+            return new Date(bedtime + SLEEP_CYCLE_TIME * (i + 4));
+          });
+        }
+
+        function updateWakeupTimes(times) {
+          var timeNodes = results.children;
+          for (var i = 0; i < times.length; ++i) {
+            timeNodes[i].textContent = formatTime(times[i]);
+          }
+        }
+
+        function tick() {
+          updateWakeupTimes(wakeupTimes(new Date));
+        }
+
+        document.addEventListener('touchstart', tick);
+        document.body.onload = function() { window.top.scrollTo(0, 1); };
+        tick();
+      }());
+    </script>
+  </body>
+</html>

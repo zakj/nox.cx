@@ -2,22 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0">
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=0">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Sleep!</title>
     <style>
+      html { display: table; height: 100%; width: 100%; }
+      body { display: table-cell; vertical-align: middle; }
       body {
         background: #000;
         color: #999;
         font-family: Helvetica Neue, Helvetica, sans-serif;
         font-size: 24px;
         text-align: center;
-        padding-bottom: 320px;  /* to hide the addressbar */
       }
       h1 { font-family: Avenir, sans-serif; }
       #results {
         list-style: none;
         padding: 0;
+        padding-bottom: 100px;
       }
       #results > li {
         background: #222;
@@ -68,7 +71,6 @@
         }
 
         document.addEventListener('touchstart', tick);
-        document.body.onload = function() { window.top.scrollTo(0, 1); };
         tick();
       }());
     </script>

@@ -2,3 +2,5 @@ local_settings.cfg
 *.pyc
 .webassets-cache/
 static/gen/
+dump.rdb
+tmp

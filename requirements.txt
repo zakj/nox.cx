@@ -1,7 +1,8 @@
 Flask==0.8
+git+git://github.com/miracle2k/webassets.git@5c20bbadd55546799195c2140b20574c1b9389f1
 Flask-Assets==0.7
 Flask-Script==0.3.3
-git+git://github.com/zakj/webassets.git
+jsonschema==0.7
 cssmin==0.1.4
 
 python-instagram==0.8.0

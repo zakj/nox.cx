@@ -1,0 +1,13 @@
+<input placeholder="Name" name="name" value="{{name}}"><br>
+
+{{#each goodForOptions}}
+  <label>
+    <input type="checkbox" name="goodFor" value="{{this}}"
+    {{#ifContains ../goodFor this}}checked{{/ifContains}}>
+    {{this}}
+  </label>
+{{/each}}
+
+<br>
+<input type="submit" value="Save">
+<input type="reset" value="Cancel">

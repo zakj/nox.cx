@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% set title = 'PinMeal' %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+
+  <a id="lunch">Lunch</a>
+  <a id="dinner">Dinner</a>
+  <a id="drinks">Drinks</a>
+
+  <ol id="spots"></ol>
+  <a id="new">New</a>
+
+  <br><br><input id="autocomplete" size=60>
+
+  <style>
+    .pac-container:after { display: none; }
+  </style>
+
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+  {% assets 'pinmeal' -%}
+    <script src="{{ ASSET_URL }}"></script>
+  {%- endassets %}
+  <script>
+    app.spots.reset({{ spots|tojson|safe }})
+  </script>
+{% endblock %}

@@ -34,8 +34,8 @@ def create_app():
         filters='uglifyjs', output='gen/pinmeal.js')
 
     from main import main
-    from pinmeal import pinmeal
     app.register_blueprint(main)
-    app.register_blueprint(pinmeal, url_prefix='/pinmeal')
+    #from pinmeal import pinmeal
+    #app.register_blueprint(pinmeal, url_prefix='/pinmeal')
 
     return app

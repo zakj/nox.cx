@@ -7,3 +7,4 @@ cssmin==0.1.4
 
 python-instagram==0.8.0
 redis==2.4.13
+uwsgi==1.2.3
